@@ -1,23 +1,24 @@
 package karbonfw.plea4sanity.domain.orders;
 
-import java.util.List;
 import java.util.UUID;
 
+import io.vavr.collection.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
+@AllArgsConstructor
 @Data
 @Builder
 public class Order {
 
     private final UUID id;
 
-    private String customerCode;
+    private final String customerCode;
 
-    private long version;
+    private final long version;
 
-    private String description;
+    private final String description;
 
-    private List<OrderLine> lines;
+    private final List<OrderLine> lines;
 }
