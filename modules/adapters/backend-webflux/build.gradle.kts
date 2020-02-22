@@ -17,6 +17,7 @@ repositories {
 dependencies {
     implementation(project(":modules:domain:orders"))
     implementation(project(":modules:app:order-management"))
+    implementation(project(":modules:adapters:order-store-inmem"))
 
     implementation("org.springframework.boot:spring-boot-starter-webflux")
 
