@@ -1,18 +1,18 @@
 package karbonfw.plea4sanity.app.ordersmgmt.adapters;
 
-import java.util.Optional;
 import java.util.UUID;
 
-import io.vavr.collection.List;
 import karbonfw.plea4sanity.domain.orders.Order;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface OrderRepository {
 
-    List<Order> findAllOrders(String customerCode);
+    Flux<Order> findAllOrders(String customerCode);
 
-    Optional<Order> findById(UUID id);
+    Mono<Order> findById(UUID id);
 
-    Order save(Order order);
+    Mono<Order> save(Order order);
 
-    void delete(Order order);
+    Mono<Void> delete(Order order);
 }
