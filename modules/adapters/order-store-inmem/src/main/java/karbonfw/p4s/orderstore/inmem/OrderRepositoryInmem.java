@@ -14,6 +14,11 @@ public class OrderRepositoryInmem implements OrderRepository {
 
     private final ConcurrentMap<UUID, Order> orders = new ConcurrentHashMap<>();
 
+    {
+        final UUID id = UUID.randomUUID();
+        orders.put(id, Order.builder().id(id).customerCode("123").description("foo").version(1L).build());
+    }
+
     @Override
     public Flux<Order> findAllOrders(String customerCode) {
         Objects.requireNonNull(customerCode);

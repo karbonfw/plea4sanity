@@ -1,11 +1,8 @@
 package karbonfw.p4s.backend;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 import karbonfw.plea4sanity.app.ordersmgmt.business.OrderCrudService;
-import karbonfw.plea4sanity.domain.orders.Order;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -19,14 +16,9 @@ public class OrderHandler {
     private final OrderCrudService orderCrudService;
 
     public Mono<ServerResponse> findOrders(ServerRequest serverRequest) {
-        final List<Order> orders = new ArrayList<>();
-        final CompletableFuture<ServerResponse> future = new CompletableFuture<>();
+        return orderCrudService.findAllOrders(serverRequest.pathVariable("customerCode"))
+                .collect(ArrayList::new, ArrayList::add)
+                .flatMap(orders -> ServerResponse.ok().bodyValue(orders));
 
-        orderCrudService.findAllOrders(serverRequest.pathVariable("customerCode")).subscribe(
-                orders::add,
-                error -> {},
-                () -> future.complete(ServerResponse.ok().bodyValue(orders).block())
-        );
-        return Mono.fromFuture(future);
     }
 }
