@@ -5,8 +5,8 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import karbonfw.plea4sanity.app.ordersmgmt.adapters.OrderRepository;
-import karbonfw.plea4sanity.domain.orders.Order;
+import karbonfw.p4s.app.ordersmgmt.adapters.OrderRepository;
+import karbonfw.p4s.domain.orders.Order;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -41,8 +41,7 @@ public class OrderRepositoryInmem implements OrderRepository {
     }
 
     @Override
-    public Mono<Void> delete(Order order) {
-        this.orders.remove(order.getId());
-        return Mono.empty();
+    public Mono<Order> delete(Order order) {
+        return Mono.just(this.orders.remove(order.getId()));
     }
 }

@@ -1,4 +1,4 @@
-package karbonfw.plea4sanity.domain.orders;
+package karbonfw.p4s.domain.orders;
 
 import java.math.BigDecimal;
 import java.util.UUID;

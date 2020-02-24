@@ -12,7 +12,9 @@ public class Routes {
     @Bean
     public RouterFunction<ServerResponse> routerFunction(OrderHandler orderHandler) {
         return RouterFunctions.route()
-                .GET("orders/{customerCode}", orderHandler::findOrders)
+                .GET("customers/{customerCode}/orders", orderHandler::findOrders)
+                .GET("customers/{customerCode}/orders/{orderId}", orderHandler::getOrder)
+                .DELETE("customers/{customerCode}/orders/{orderId}", orderHandler::delete)
                 .build();
     }
 }

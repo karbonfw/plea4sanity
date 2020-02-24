@@ -1,8 +1,8 @@
-package karbonfw.plea4sanity.app.ordersmgmt.adapters;
+package karbonfw.p4s.app.ordersmgmt.adapters;
 
 import java.util.UUID;
 
-import karbonfw.plea4sanity.domain.orders.Order;
+import karbonfw.p4s.domain.orders.Order;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -14,5 +14,5 @@ public interface OrderRepository {
 
     Mono<Order> save(Order order);
 
-    Mono<Void> delete(Order order);
+    Mono<Order> delete(Order order);
 }
