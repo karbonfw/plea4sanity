@@ -5,3 +5,9 @@ How to build:
 ```
 ./gradlew build
 ```
+
+How to run:
+```
+./gradlew bootRun
+```
+and then access: http://localhost:8080/orders/123
