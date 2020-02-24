@@ -5,6 +5,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import io.vavr.collection.List;
 import karbonfw.p4s.app.ordersmgmt.adapters.OrderRepository;
 import karbonfw.p4s.domain.orders.Order;
 import reactor.core.publisher.Flux;
@@ -16,7 +17,13 @@ public class OrderRepositoryInmem implements OrderRepository {
 
     {
         final UUID id = UUID.randomUUID();
-        orders.put(id, Order.builder().id(id).customerCode("123").description("foo").version(1L).build());
+        orders.put(id, Order.builder()
+                .id(id)
+                .customerCode("123")
+                .description("foo")
+                .version(1L)
+                .lines(List.empty())
+                .build());
     }
 
     @Override

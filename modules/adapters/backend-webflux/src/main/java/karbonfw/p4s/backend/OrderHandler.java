@@ -17,11 +17,14 @@ public class OrderHandler {
 
     private final OrderCrudService orderCrudService;
 
+    private final Converters converters;
+
     public Mono<ServerResponse> findOrders(ServerRequest serverRequest) {
         return ServerResponse
                 .ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(orderCrudService.findAllOrders(serverRequest.pathVariable("customerCode")), Order.class);
+                .body(orderCrudService.findAllOrders(serverRequest.pathVariable("customerCode")).map(converters::toOrderDto),
+                        Order.class);
     }
 
     public Mono<ServerResponse> getOrder(ServerRequest serverRequest) {
@@ -30,7 +33,7 @@ public class OrderHandler {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(orderCrudService.findById(
                         serverRequest.pathVariable("customerCode"),
-                        UUID.fromString(serverRequest.pathVariable("orderId"))),
+                        UUID.fromString(serverRequest.pathVariable("orderId"))).map(converters::toOrderDetailsDto),
                         Order.class);
     }
 
