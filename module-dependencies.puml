@@ -1,0 +1,21 @@
+@startuml
+  "domain-orders" <.. "order-management"
+  "domain-orders" <.. "backend-webflux"
+  "domain-orders" <.. "order-store-inmem"
+
+  "api-orders" <.. "backend-webflux"
+
+  "order-management" <.. "backend-webflux"
+  "order-management" <.. "order-store-inmem"
+
+  package backend-webflux #lightblue {
+  }
+  package order-store-inmem #lightblue {
+  }
+  package order-management #lightpink {
+  }
+  package domain-orders #lightgreen {
+  }
+  package api-orders #lightgreen {
+  }
+@enduml
