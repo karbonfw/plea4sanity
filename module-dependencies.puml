@@ -8,7 +8,7 @@
   "order-management" <.. "backend-webflux"
   "order-management" <.. "order-store-inmem"
 
-  package backend-webflux #lightgrey {
+  package backend-webflux #lightblue {
   }
   package order-store-inmem #lightblue {
   }
