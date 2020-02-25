@@ -18,7 +18,7 @@ and then access: http://localhost:8080/orders/123
 Fully hexagonal architecture with dependencies between modules visualized on
 following package diagram:
 
-![Package dependencies](http://www.plantuml.com/plantuml/png/5Sqz3i8m34VndLF00QWN9gPUnKt-q0Z7YVoXYjjJfgSt_LOFjiWkbrlJ8bcH9jSzOlgJoFXOtYtstD9XPMX0OocZquTj6_ewQ0huuQmjljJP0qPzr1JSAoQqGak3B_DFhEUV_G40)
+![Package dependencies](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/karbonfw/plea4sanity/master/module-dependencies.puml)
 
 * Green - domain & API
 * Pink - application
