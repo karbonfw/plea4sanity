@@ -1,4 +1,4 @@
-# Plea for sanity
+# Plea for Sanity
 A Webflux based reference project using hexagonal architecture.
 
 [![CircleCI](https://circleci.com/gh/karbonfw/plea4sanity/tree/master.svg?style=svg)](https://circleci.com/gh/karbonfw/plea4sanity/tree/master)
@@ -13,7 +13,7 @@ How to run:
 ```
 ./gradlew bootRun
 ```
-and then access: http://localhost:8080/orders/123
+and then access: http://localhost:8080/customers/123/orders
 
 ## Architecture
 Fully hexagonal architecture with dependencies between modules visualized on
