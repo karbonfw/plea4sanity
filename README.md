@@ -3,6 +3,7 @@ A Webflux based reference project using hexagonal architecture.
 
 [![CircleCI](https://circleci.com/gh/karbonfw/plea4sanity/tree/master.svg?style=svg)](https://circleci.com/gh/karbonfw/plea4sanity/tree/master)
 
+## Running
 How to build:
 ```
 ./gradlew build
@@ -14,7 +15,7 @@ How to run:
 ```
 and then access: http://localhost:8080/orders/123
 
-# Architecture
+## Architecture
 Fully hexagonal architecture with dependencies between modules visualized on
 following package diagram:
 
