@@ -1,8 +1,8 @@
-package karbonfw.p4s.domain.orders;
+package karbonfw.p4s.domain.orders.entity;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
-import io.vavr.collection.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,15 +10,13 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 @Builder
-public class Order {
+public class OrderLine {
 
     private final UUID id;
 
-    private final String customerCode;
-
-    private final long version;
-
     private final String description;
 
-    private final List<OrderLine> lines;
+    private final BigDecimal quantity;
+
+    private final BigDecimal price;
 }

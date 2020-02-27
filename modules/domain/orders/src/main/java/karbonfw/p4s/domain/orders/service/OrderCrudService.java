@@ -1,9 +1,9 @@
-package karbonfw.p4s.app.ordersmgmt.business;
+package karbonfw.p4s.domain.orders.service;
 
 import java.util.UUID;
 
-import karbonfw.p4s.app.ordersmgmt.adapters.OrderRepository;
-import karbonfw.p4s.domain.orders.Order;
+import karbonfw.p4s.domain.orders.repository.OrderRepository;
+import karbonfw.p4s.domain.orders.entity.Order;
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

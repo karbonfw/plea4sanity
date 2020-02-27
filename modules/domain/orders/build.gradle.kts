@@ -1,4 +1,5 @@
 val vavrVersion: String by project
+val reactorCoreVersion: String by project
 
 plugins {
     `java-library`
@@ -7,4 +8,5 @@ plugins {
 
 dependencies {
     implementation("io.vavr:vavr:${vavrVersion}")
+    implementation("io.projectreactor:reactor-core:${reactorCoreVersion}")
 }

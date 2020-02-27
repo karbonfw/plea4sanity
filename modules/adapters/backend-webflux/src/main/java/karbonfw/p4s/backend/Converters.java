@@ -3,8 +3,8 @@ package karbonfw.p4s.backend;
 import karbonfw.p4s.api.orders.OrderDetailsDto;
 import karbonfw.p4s.api.orders.OrderDto;
 import karbonfw.p4s.api.orders.OrderLineDto;
-import karbonfw.p4s.domain.orders.Order;
-import karbonfw.p4s.domain.orders.OrderLine;
+import karbonfw.p4s.domain.orders.entity.Order;
+import karbonfw.p4s.domain.orders.entity.OrderLine;
 import org.springframework.stereotype.Component;
 
 @Component

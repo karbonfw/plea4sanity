@@ -2,8 +2,8 @@ package karbonfw.p4s.backend;
 
 import java.util.UUID;
 
-import karbonfw.p4s.app.ordersmgmt.business.OrderCrudService;
-import karbonfw.p4s.domain.orders.Order;
+import karbonfw.p4s.domain.orders.service.OrderCrudService;
+import karbonfw.p4s.domain.orders.entity.Order;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

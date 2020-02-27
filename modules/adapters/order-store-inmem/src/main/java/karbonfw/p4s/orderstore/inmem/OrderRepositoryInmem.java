@@ -6,8 +6,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import io.vavr.collection.List;
-import karbonfw.p4s.app.ordersmgmt.adapters.OrderRepository;
-import karbonfw.p4s.domain.orders.Order;
+import karbonfw.p4s.domain.orders.repository.OrderRepository;
+import karbonfw.p4s.domain.orders.entity.Order;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
