@@ -1,4 +1,4 @@
-package karbonfw.p4s.backend;
+package karbonfw.p4s.backend.converter;
 
 import karbonfw.p4s.api.orders.OrderDetailsDto;
 import karbonfw.p4s.api.orders.OrderDto;
@@ -8,7 +8,7 @@ import karbonfw.p4s.domain.orders.entity.OrderLine;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Converters {
+public class OrderConverter {
 
     public OrderDto toOrderDto(Order order) {
         return OrderDto.builder()

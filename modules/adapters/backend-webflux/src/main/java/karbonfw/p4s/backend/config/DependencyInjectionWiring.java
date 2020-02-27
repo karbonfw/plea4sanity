@@ -1,4 +1,4 @@
-package karbonfw.p4s.backend;
+package karbonfw.p4s.backend.config;
 
 import karbonfw.p4s.orderstore.inmem.OrderRepositoryInmem;
 import karbonfw.p4s.domain.orders.repository.OrderRepository;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class Producers {
+public class DependencyInjectionWiring {
 
     @Bean
     public OrderRepository orderRepository() {

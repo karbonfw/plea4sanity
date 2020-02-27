@@ -1,7 +1,8 @@
-package karbonfw.p4s.backend;
+package karbonfw.p4s.backend.rest;
 
 import java.util.UUID;
 
+import karbonfw.p4s.backend.converter.OrderConverter;
 import karbonfw.p4s.domain.orders.service.OrderCrudService;
 import karbonfw.p4s.domain.orders.entity.Order;
 import lombok.AllArgsConstructor;
@@ -17,13 +18,13 @@ public class OrderHandler {
 
     private final OrderCrudService orderCrudService;
 
-    private final Converters converters;
+    private final OrderConverter orderConverter;
 
     public Mono<ServerResponse> findOrders(ServerRequest serverRequest) {
         return ServerResponse
                 .ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(orderCrudService.findAllOrders(serverRequest.pathVariable("customerCode")).map(converters::toOrderDto),
+                .body(orderCrudService.findAllOrders(serverRequest.pathVariable("customerCode")).map(orderConverter::toOrderDto),
                         Order.class);
     }
 
@@ -33,7 +34,7 @@ public class OrderHandler {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(orderCrudService.findById(
                         serverRequest.pathVariable("customerCode"),
-                        UUID.fromString(serverRequest.pathVariable("orderId"))).map(converters::toOrderDetailsDto),
+                        UUID.fromString(serverRequest.pathVariable("orderId"))).map(orderConverter::toOrderDetailsDto),
                         Order.class);
     }
 

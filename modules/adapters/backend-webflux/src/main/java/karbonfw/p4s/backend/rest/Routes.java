@@ -1,4 +1,4 @@
-package karbonfw.p4s.backend;
+package karbonfw.p4s.backend.rest;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
