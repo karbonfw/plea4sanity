@@ -10,7 +10,7 @@ interface AddressRepository {
 
     suspend fun findByKey(addressKey: AddressKey): Address?
 
-    suspend fun save(address: Address): Address?
+    suspend fun save(address: Address): Address
 
     suspend fun delete(addressKey: AddressKey): Address?
 }
