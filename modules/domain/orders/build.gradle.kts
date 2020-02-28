@@ -7,6 +7,7 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":modules:domain:geographic"))
     implementation("io.vavr:vavr:${vavrVersion}")
     implementation("io.projectreactor:reactor-core:${reactorCoreVersion}")
 }

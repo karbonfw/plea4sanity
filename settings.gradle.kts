@@ -1,6 +1,7 @@
 rootProject.name = "plea4sanity"
 
 // domain
+include(":modules:domain:geographic")
 include(":modules:domain:orders")
 
 // api
